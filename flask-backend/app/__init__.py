@@ -1,17 +1,22 @@
 from flask import Flask, render_template
+from flask_migrate import Migrate
 import os
 
 # import statement for CSRF
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 
 from .config import Configuration
-from .models import db
+from .models import db, Pokemon, Item, PokemonType
 from .forms import CreatePokemonForm
 
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
+
 db.init_app(app)
+Migrate(app, db)
+
+
 
 
 
