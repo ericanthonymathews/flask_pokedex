@@ -1,13 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 
 # import statement for CSRF
 from flask_wtf.csrf import CSRFProtect, generate_csrf
+
 from .config import Configuration
+from .models import db
+from .forms import CreatePokemonForm
 
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
+db.init_app(app)
+
 
 
 # after request code for CSRF token injection
@@ -26,4 +31,7 @@ def inject_csrf_token(response):
 
 @app.route('/')
 def index(): 
-  return 'flask is working!'
+  form = CreatePokemonForm()
+  return render_template("PokemonForm.html", form=form)
+
+

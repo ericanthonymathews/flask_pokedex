@@ -1,0 +1,19 @@
+
+
+
+<form action="/" method="post">
+  {{ form.csrf_token }}
+
+  <div>{{ form.number.label }} {{ form.number }}</div>
+  <div>{{ form.attack.label }} {{ form.attack }}</div>
+  <div>{{ form.defense.label }} {{ form.defense }}</div>
+  <div>{{ form.image_url.lable }} {{ form.image_url }}</div>
+  <div>{{ form.name.label }} {{ form.name }}</div>
+  <div>{{ form.type.label }} {{ form.type }}</div>
+  <div>{{ form.moves.label }} {{ form.moves }}</div>
+  <div>{{ form.encounter_rate.label }} {{ form.encounter_rate }}</div>
+  <div>{{ form.catch_rate.label }} {{ form.catch_rate }}</div>
+  <div>{{ form.captured.label }} {{ form.captured }}</div>
+  <div>{{ form.submit }}</div>
+
+</form>

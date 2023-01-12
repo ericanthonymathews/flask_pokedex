@@ -64,6 +64,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ENUM(types),
       values: types
     },
+    
     moves: {
       allowNull: false,
       type: DataTypes.STRING(255),
