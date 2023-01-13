@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from random import randint, choice
 
 
 db = SQLAlchemy()
@@ -45,6 +46,21 @@ class Item(db.Model):
     pokemon_id = db.Column(db.Integer, db.ForeignKey(
         'pokemons.id'), nullable=False)
     pokemon = db.relationship("Pokemon", back_populates='items')
+
+    def random_image(self):
+        images = [
+            "/images/pokemon_berry.svg",
+            "/images/pokemon_egg.svg",
+            "/images/pokemon_potion.svg",
+            "/images/pokemon_super_potion.svg",
+        ]
+        return choice(images)
+
+    def generate_items(self):
+        for pokemon_id in range(15):
+            return {
+                "pokemonId": pokemon_id
+            }
 
 
 class PokemonType(db.Model):
