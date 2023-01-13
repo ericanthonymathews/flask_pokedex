@@ -1,5 +1,5 @@
 from app.models import db, Pokemon, Item, PokemonType
-from app import app 
+from app import app
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -15,7 +15,7 @@ with app.app_context():
         attack = 49,
         defense = 49,
         type = 'grass',
-        moves = "tackle, vine whip",
+        moves = "tackle,vine whip",
         captured= True
     )
 
@@ -26,7 +26,7 @@ with app.app_context():
         attack = 62,
         defense = 63,
         type = 'grass',
-        moves = 'tackle,vine whip,razor leaf',      
+        moves = 'tackle,vine whip,razor leaf',
         captured= True
     )
 
@@ -37,7 +37,7 @@ with app.app_context():
         attack = 82,
         defense = 83,
         type = 'grass',
-        moves = 'tackle, vine whip ,razor leaf',
+        moves = 'tackle,vine whip,razor leaf',
         captured= True
     )
 
@@ -48,7 +48,7 @@ with app.app_context():
         attack = 52,
         defense = 43,
         type = 'fire',
-        moves = 'scratch, ember, metal claw',
+        moves = 'scratch,ember,metal claw',
         captured= True
     )
 
@@ -59,7 +59,7 @@ with app.app_context():
         attack = 64,
         defense = 58,
         type = 'fire',
-        moves = 'scratch , ember, metal, claw, flamethrower',
+        moves = 'scratch,ember,metal,claw,flamethrower',
         captured= True
     )
 
@@ -70,7 +70,7 @@ with app.app_context():
         attack = 84,
         defense = 78,
         type = 'fire',
-        moves = 'flamethrower, wing attack, slash, metal claw',
+        moves = 'flamethrower,wing attack,slash,metal claw',
         captured= True
     )
 
@@ -81,7 +81,7 @@ with app.app_context():
         attack = 48,
         defense = 65,
         type = 'water',
-        moves = 'tackle, bubble, water gun',
+        moves = 'tackle,bubble,water gun',
         captured= True
     )
 
@@ -92,7 +92,7 @@ with app.app_context():
         attack = 63,
         defense = 80,
         type = 'water',
-        moves = 'tackle, bubble ,water gun,bite'
+        moves = 'tackle,bubble,water gun,bite'
     )
 
 
@@ -103,8 +103,8 @@ with app.app_context():
         attack = 83,
         defense = 100,
         type = 'water',
-        moves = 'hydro pump, bubble, water gun,bite'
-    
+        moves = 'hydro pump,bubble,water gun,bite'
+
     )
 
 
@@ -116,8 +116,8 @@ with app.app_context():
         defense = 35,
         type =  'bug',
         moves ='tackle'
-    
-    
+
+
     )
 
     pokemon12 = Pokemon(
@@ -127,8 +127,8 @@ with app.app_context():
         attack = 45,
         defense = 50,
         type =  'bug',
-        moves = 'confusion, gust, psybeam, silver wind'
-    
+        moves = 'confusion,gust,psybeam,silver wind'
+
     )
 
     pokemon13 = Pokemon(
@@ -139,8 +139,8 @@ with app.app_context():
         defense = 30,
         type =  'bug',
         moves ='poison sting'
-            
-    
+
+
     )
 
     pokemon16 = Pokemon(
@@ -150,9 +150,9 @@ with app.app_context():
         attack = 45,
         defense = 40,
         type =  'normal',
-        moves = 'tackle, gust'
-            
-    
+        moves = 'tackle,gust'
+
+
     )
 
     pokemon17 = Pokemon(
@@ -162,7 +162,7 @@ with app.app_context():
         attack = 60,
         defense = 55,
         type =  'normal',
-        moves = 'tackle, gust, wing attack'
+        moves = 'tackle,gust,wing attack'
     )
 
     pokemon18 = Pokemon(
@@ -172,9 +172,9 @@ with app.app_context():
         attack = 80,
         defense = 75,
         type =   'normal',
-        moves = 'tackle, gust, wing attack'
-            
-    
+        moves = 'tackle,gust,wing attack'
+
+
     )
 
 
@@ -183,8 +183,3 @@ with app.app_context():
     add_pokemons = [db.session.add(pokemon) for pokemon in all_pokemons]
     db.session.commit()
     print("Pokemons Seeded")
-
-
-
-
-

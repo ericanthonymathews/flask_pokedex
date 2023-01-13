@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_migrate import Migrate
+from .routes.pokemon_routes import pokemon_routes
 import os
 
 # import statement for CSRF
@@ -16,8 +17,7 @@ app.config.from_object(Configuration)
 db.init_app(app)
 Migrate(app, db)
 
-
-
+app.register_blueprint(pokemon_routes)
 
 
 # after request code for CSRF token injection
@@ -33,10 +33,7 @@ def inject_csrf_token(response):
     return response
 
 
-
 @app.route('/')
-def index(): 
-  form = CreatePokemonForm()
-  return render_template("PokemonForm.html", form=form)
-
-
+def index():
+    form = CreatePokemonForm()
+    return render_template("PokemonForm.html", form=form)
